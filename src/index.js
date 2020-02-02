@@ -31,6 +31,10 @@ async function createClientFromFacebookAccessToken(facebookAccessToken) {
   return createHTTPClient(loginResponse.data.data.api_token);
 }
 
+async function createClientFromFacebookApiToken(facebookApiToken) {
+  return createHTTPClient(facebookApiToken);
+}
+
 async function createClientFromFacebookLogin({ emailAddress, password }) {
   const {
     apiToken,
@@ -44,6 +48,7 @@ async function createClientFromFacebookLogin({ emailAddress, password }) {
 
 export {
   createClientFromFacebookAccessToken,
+  createClientFromFacebookApiToken,
   createClientFromFacebookLogin,
   GENDERS,
   GENDER_SEARCH_OPTIONS,
